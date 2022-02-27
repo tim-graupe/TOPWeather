@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="main.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet" />
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+  <!-- had to put the above meta tag in order to prevent a "blocked loading mixed active content" error -->
+
+  <title>Weather App</title>
+</head>
+
+<body>
+  <div id="nav-bar">
+    <label for="form__label">Enter city name or ZIP (US)</label>
+    <input required id="city-input" class="form__field" name="cityInput" />
+    <button id="submit-btn">Submit</button>
+    <button id="change-to-F" class="unit-temps">F</button>
+    <button id="change-to-C" class="unit-temps">C</button>
+  </div>
+  <div id="temp-container">
+    <div id="display-temp"></div>
+    <div id="display-current-conditions" class="display-info"></div>
+    <div id="display-city-name" class="display-info"></div>
+
+    <div id="display-hourly" class="display-info"></div>
+    <div id="display-forecast" class="display-info"></div>
+  </div>
+</body>
+
+</html>

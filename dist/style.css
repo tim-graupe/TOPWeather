@@ -1,0 +1,116 @@
+html,
+body {
+  background-color: rgb(29, 31, 31);
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+
+}
+
+#nav-bar {
+  background-color: rgb(    234, 118, 22 );
+  padding: 25px;
+}
+
+#submit-btn{
+  
+}
+
+.unit-temps {
+  float: right;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  
+}
+
+.unit-temps:active {
+  box-shadow: 0px 0px 0px 0px;
+  top: 5px;
+  left: 5px;
+}
+
+
+
+
+city-input:invalid {
+  border: 2px dashed red;
+}
+
+
+input:invalid:required {
+  background-image: linear-gradient(to left, pink, lightgreen);
+}
+
+input:valid {
+  border: 2px solid black;
+}
+
+#display-temp {
+  font-size: 7.5vw;
+  text-align: center;
+  color: white;
+ 
+}
+#display-current-conditions{
+  color: white;
+}
+
+.display-info {
+  justify-content: center;
+  display: flex;
+}
+
+.display-info>* {
+  padding: 10px;
+}
+
+
+.forecast-card {
+  background-color: rgba(17, 25, 40, 0.75);
+  margin: 5px;
+  padding: 25px;
+  color: white;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.hourly-card {
+  text-align: center;
+  flex: 0 0 auto;
+
+
+}
+
+.hourly-card>* {
+  background-color: rgba(255, 255, 255);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.125);
+  display: inline-block;
+  padding: 25px;
+  margin: 5px;
+}
+
+#display-hourly {
+  background-color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+@media (min-width: 768px) {
+  .unit-temps {
+    padding: 0.25em 0.75em;
+  }
+}
