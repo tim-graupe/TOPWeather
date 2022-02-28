@@ -7,6 +7,8 @@ exports.getWeatherZip = getWeatherZip;
 
 var _displaytemps = require("./DOMfuncs/displaytemps.js");
 
+var _getCurrentConditions = require("./getCurrentConditions.js");
+
 var _getWeather = require("./getWeather.js");
 
 function getWeatherZip(unit) {
@@ -33,8 +35,11 @@ function getWeatherZip(unit) {
           //display current temp
           if (unit == "imperial") {
             (0, _displaytemps.showF)(weatherData.main.temp, weatherData.name);
+            (0, _getCurrentConditions.currentConditions)(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, "http://openweathermap.org/img/wn/".concat(weatherData.weather[0].icon, "@2x.png"), weatherData.wind.speed);
+            console.log(weatherData);
           } else {
             (0, _displaytemps.showC)(weatherData.main.temp, weatherData.name);
+            (0, _getCurrentConditions.currentConditions)(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, "http://openweathermap.org/img/wn/".concat(weatherData.weather[0].icon, "@2x.png"), weatherData.wind.speed);
           }
 
         case 7:

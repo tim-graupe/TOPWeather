@@ -12,8 +12,10 @@ var _getWeather = require("./getWeather.js");
 
 var forecast = document.getElementById("display-forecast");
 exports.forecast = forecast;
+var header = document.getElementById("week-header");
 
 function getForecast(unit) {
+  header.textContent = "The Week Ahead";
   fetch("http://api.openweathermap.org/data/2.5/forecast?q=".concat(_getWeather.city.value, ",us&units=").concat(unit, "&appid=f4c2e88d89f530a5c961cffa302dc0b9"), {
     mode: "cors"
   }).then(function (response) {

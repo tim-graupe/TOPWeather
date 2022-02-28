@@ -1,4 +1,5 @@
 import { showC, showF } from "./DOMfuncs/displaytemps.js";
+import { currentConditions } from "./getCurrentConditions.js";
 import { displayTemp, submitBtn, city, cityName } from "./getWeather.js";
 export async function getWeatherName(unit) {
   const response = await fetch(
@@ -12,7 +13,9 @@ export async function getWeatherName(unit) {
   //display current temp
   if (unit == "imperial") {
     showF(weatherData.main.temp, weatherData.name);
+    currentConditions(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`, weatherData.wind.speed);
   } else {
     showC(weatherData.main.temp, weatherData.name);
+    currentConditions(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`, weatherData.wind.speed);
   }
 }

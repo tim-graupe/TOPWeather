@@ -19,6 +19,7 @@ fBtn.addEventListener("click", function () {
   (0, _getWeather.getWeather)("imperial");
   (0, _getForecast.getForecast)("imperial");
   (0, _getForecastHourly.getForecastHourly)("imperial");
+  console.log('hi');
 });
 submitBtn.addEventListener("click", function () {
   (0, _getWeather.getWeather)("imperial");

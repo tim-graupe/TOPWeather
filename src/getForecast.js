@@ -1,8 +1,10 @@
 import { showHighLow } from "./DOMfuncs/displayHighLow.js";
 import { city } from "./getWeather.js";
 const forecast = document.getElementById("display-forecast");
+const header = document.getElementById("week-header")
 
 export function getForecast(unit) {
+  header.textContent = "The Week Ahead";
   fetch(
     `http://api.openweathermap.org/data/2.5/forecast?q=${city.value},us&units=${unit}&appid=f4c2e88d89f530a5c961cffa302dc0b9`,
     { mode: "cors" }
