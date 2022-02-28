@@ -70,10 +70,12 @@ input:valid {
 .display-info {
   justify-content: center;
   display: flex;
+  color: white;
 }
 
 .display-info>* {
   padding: 10px;
+  color: white;
 }
 
 
@@ -109,8 +111,12 @@ input:valid {
   overflow-x: auto;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
+
   .unit-temps {
     padding: 0.25em 0.75em;
+  }
+  .display-info{
+    display: block;
   }
 }
