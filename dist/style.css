@@ -8,15 +8,28 @@ body {
 }
 
 #nav-bar {
-  background-color: rgb(    234, 118, 22 );
+  background-color: rgb(234, 118, 22);
   padding: 25px;
 }
 
-#submit-btn{
-  
+#submit-btn {
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #000;
+  cursor: pointer;
+  border: 3px solid;
+  padding: 0.25em 0.5em;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }
 
-.unit-temps {
+.unit-temps-buttons {
   float: right;
   font-family: "Open Sans", sans-serif;
   font-size: 16px;
@@ -32,10 +45,10 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  
+
 }
 
-.unit-temps:active {
+.unit-temps-buttons:active {
   box-shadow: 0px 0px 0px 0px;
   top: 5px;
   left: 5px;
@@ -44,24 +57,25 @@ body {
 
 
 
-city-input:invalid {
-  border: 2px dashed red;
+#city-input {
+  width: 33%;
+  padding: 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid red;
 }
 
 
-input:invalid:required {
-  background-image: linear-gradient(to left, pink, lightgreen);
-}
 
-input:valid {
-  border: 2px solid black;
-}
+
+
 
 #display-temp {
   font-size: 7.5vw;
   text-align: center;
   color: white;
- 
+
 }
 
 
@@ -75,7 +89,8 @@ input:valid {
   padding: 10px;
   color: white;
 }
-#display-current-conditions{
+
+#display-current-conditions {
   width: 200px;
   height: 150px;
   margin: 5px auto;
@@ -114,16 +129,16 @@ input:valid {
 }
 
 @media (max-width: 650px) {
-  #display-city-name{
+  #display-city-name {
     text-align: center;
     padding-bottom: 15px;
   }
 
-  #week-header{
+  #week-header {
     text-align: center;
   }
 
-  #display-forecast{
+  #display-forecast {
     text-align: center;
   }
 
@@ -131,7 +146,8 @@ input:valid {
   .unit-temps {
     padding: 0.25em 0.75em;
   }
-  .display-info{
+
+  .display-info {
     display: block;
   }
 }
