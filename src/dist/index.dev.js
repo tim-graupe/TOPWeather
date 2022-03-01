@@ -1,15 +1,34 @@
 "use strict";
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.hourly = exports.cityName = exports.displayTemp = exports.fBtn = exports.cBtn = exports.city = exports.submitBtn = void 0;
+
 var _getWeather = require("./getWeather.js");
 
 var _getForecast = require("./getForecast.js");
 
 var _getForecastHourly = require("./getForecastHourly.js");
 
+var _getWeatherZip = require("./getWeatherZip.js");
+
+var _getWeatherName = require("./getWeatherName.js");
+
 var submitBtn = document.getElementById("submit-btn");
+exports.submitBtn = submitBtn;
 var city = document.getElementById("city-input");
+exports.city = city;
 var cBtn = document.getElementById("change-to-C");
+exports.cBtn = cBtn;
 var fBtn = document.getElementById("change-to-F");
+exports.fBtn = fBtn;
+var displayTemp = document.getElementById("display-temp");
+exports.displayTemp = displayTemp;
+var cityName = document.getElementById("display-city-name");
+exports.cityName = cityName;
+var hourly = document.getElementById("display-hourly");
+exports.hourly = hourly;
 cBtn.addEventListener("click", function () {
   (0, _getWeather.getWeather)("metric");
   (0, _getForecast.getForecast)("metric");

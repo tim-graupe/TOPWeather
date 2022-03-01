@@ -1,12 +1,8 @@
 import { getWeatherZip } from "./getWeatherZip.js";
 import { getWeatherName } from "./getWeatherName.js";
-import { getForecast, forecast } from "./getForecast.js";
+import {  forecast } from "./getForecast.js";
+import {city, cityName, hourly} from './index.js'
 
-const displayTemp = document.getElementById("display-temp");
-const submitBtn = document.getElementById("submit-btn");
-const city = document.getElementById("city-input");
-const cityName = document.getElementById("display-city-name");
-const hourly = document.getElementById("display-hourly");
 
 async function getWeather(unit) {
   const currentCity = city.value;
@@ -21,4 +17,4 @@ async function getWeather(unit) {
   }
 }
 
-export { displayTemp, submitBtn, city, cityName, getWeather };
+export { getWeather };

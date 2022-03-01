@@ -1,5 +1,4 @@
-const forecast = document.getElementById("display-forecast");
-
+import { forecast } from "../getForecast.js";
 export function showHighLow(high, low, dayName, icon) {
   const highDiv = document.createElement("div");
   const dayDiv = document.createElement("div");

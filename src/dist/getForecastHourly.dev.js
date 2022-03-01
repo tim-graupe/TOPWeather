@@ -7,12 +7,12 @@ exports.getForecastHourly = getForecastHourly;
 
 var _displayHourly = require("./DOMfuncs/displayHourly.js");
 
-var _getWeather = require("./getWeather.js");
+var _index = require("./index.js");
 
 var hourly = document.getElementById("display-hourly");
 
 function getForecastHourly(unit) {
-  fetch("http://api.openweathermap.org/data/2.5/forecast?q=".concat(_getWeather.city.value, ",us&units=").concat(unit, "&appid=f4c2e88d89f530a5c961cffa302dc0b9"), {
+  fetch("http://api.openweathermap.org/data/2.5/forecast?q=".concat(_index.city.value, ",us&units=").concat(unit, "&appid=f4c2e88d89f530a5c961cffa302dc0b9"), {
     mode: "cors"
   }).then(function (response) {
     return response.json();

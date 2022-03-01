@@ -1,6 +1,6 @@
+import { currentConditions } from "./DOMfuncs/displayCurrentConditions.js";
 import { showC, showF } from "./DOMfuncs/displaytemps.js";
-import { currentConditions } from "./getCurrentConditions.js";
-import { displayTemp, submitBtn, city, cityName } from "./getWeather.js";
+import { displayTemp, submitBtn, city, cityName } from "./index.js";
 
 export async function getWeatherZip(unit) {
   const response = await fetch(
@@ -15,10 +15,10 @@ export async function getWeatherZip(unit) {
   //display current temp
   if (unit == "imperial") {
     showF(weatherData.main.temp, weatherData.name);
-    currentConditions(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`, weatherData.wind.speed);
-    console.log(weatherData)
   } else {
     showC(weatherData.main.temp, weatherData.name);
-    currentConditions(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`, weatherData.wind.speed);
+
   }
+  currentConditions(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, weatherData.wind.speed, `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`);
+
 }

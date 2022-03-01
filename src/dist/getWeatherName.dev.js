@@ -7,9 +7,9 @@ exports.getWeatherName = getWeatherName;
 
 var _displaytemps = require("./DOMfuncs/displaytemps.js");
 
-var _getCurrentConditions = require("./getCurrentConditions.js");
+var _displayCurrentConditions = require("./DOMfuncs/displayCurrentConditions.js");
 
-var _getWeather = require("./getWeather.js");
+var _index = require("./index.js");
 
 function getWeatherName(unit) {
   var response, weatherData;
@@ -18,7 +18,7 @@ function getWeatherName(unit) {
       switch (_context.prev = _context.next) {
         case 0:
           _context.next = 2;
-          return regeneratorRuntime.awrap(fetch("http://api.openweathermap.org/data/2.5/weather?q=".concat(_getWeather.city.value, "&units=").concat(unit, "&appid=f4c2e88d89f530a5c961cffa302dc0b9"), {
+          return regeneratorRuntime.awrap(fetch("http://api.openweathermap.org/data/2.5/weather?q=".concat(_index.city.value, "&units=").concat(unit, "&appid=f4c2e88d89f530a5c961cffa302dc0b9"), {
             mode: "cors"
           })["catch"](function (err) {
             console.log(err);
@@ -35,10 +35,11 @@ function getWeatherName(unit) {
           //display current temp
           if (unit == "imperial") {
             (0, _displaytemps.showF)(weatherData.main.temp, weatherData.name);
-            (0, _getCurrentConditions.currentConditions)(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, "http://openweathermap.org/img/wn/".concat(weatherData.weather[0].icon, "@2x.png"), weatherData.wind.speed);
+            (0, _displayCurrentConditions.currentConditions)(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, weatherData.wind.speed, "http://openweathermap.org/img/wn/".concat(weatherData.weather[0].icon, "@2x.png"));
+            console.log(weatherData);
           } else {
             (0, _displaytemps.showC)(weatherData.main.temp, weatherData.name);
-            (0, _getCurrentConditions.currentConditions)(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, "http://openweathermap.org/img/wn/".concat(weatherData.weather[0].icon, "@2x.png"), weatherData.wind.speed);
+            (0, _displayCurrentConditions.currentConditions)(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, weatherData.wind.speed, "http://openweathermap.org/img/wn/".concat(weatherData.weather[0].icon, "@2x.png"));
           }
 
         case 7:

@@ -4,7 +4,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.showHighLow = showHighLow;
-var forecast = document.getElementById("display-forecast");
+
+var _getForecast = require("../getForecast.js");
 
 function showHighLow(high, low, dayName, icon) {
   var highDiv = document.createElement("div");
@@ -19,5 +20,6 @@ function showHighLow(high, low, dayName, icon) {
   dayDiv.appendChild(highDiv);
   dayDiv.appendChild(lowDiv);
   dayDiv.appendChild(iconDiv);
-  forecast.appendChild(dayDiv);
+
+  _getForecast.forecast.appendChild(dayDiv);
 }

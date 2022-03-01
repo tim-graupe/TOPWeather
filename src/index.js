@@ -1,11 +1,17 @@
-import { displayTemp, getWeather } from "./getWeather.js";
+import { getWeather } from "./getWeather.js";
 import { forecast, getForecast } from "./getForecast.js";
 import { getForecastHourly } from "./getForecastHourly.js";
+import { getWeatherZip } from "./getWeatherZip.js";
+import { getWeatherName } from "./getWeatherName.js";
 
 const submitBtn = document.getElementById("submit-btn");
 const city = document.getElementById("city-input");
 const cBtn = document.getElementById("change-to-C");
 const fBtn = document.getElementById("change-to-F");
+const displayTemp = document.getElementById("display-temp");
+const cityName = document.getElementById("display-city-name");
+const hourly = document.getElementById("display-hourly");
+
 
 cBtn.addEventListener("click", () => {
   getWeather("metric");
@@ -35,3 +41,4 @@ city.addEventListener("keypress", (e) => {
 });
 
 //TODO: add weather icons for current weather, mobile friendly
+export {submitBtn,city,cBtn,fBtn,displayTemp,cityName,hourly}

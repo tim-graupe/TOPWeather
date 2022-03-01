@@ -1,5 +1,5 @@
 import { showHighLow } from "./DOMfuncs/displayHighLow.js";
-import { city } from "./getWeather.js";
+import { city } from "./index.js";
 const forecast = document.getElementById("display-forecast");
 const header = document.getElementById("week-header")
 

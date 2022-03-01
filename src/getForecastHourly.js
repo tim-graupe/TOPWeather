@@ -1,5 +1,5 @@
 import { renderHourly } from "./DOMfuncs/displayHourly.js";
-import { city } from "./getWeather.js";
+import { city } from "./index.js";
 
 const hourly = document.getElementById("display-hourly");
 

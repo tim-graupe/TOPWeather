@@ -6,16 +6,16 @@ Object.defineProperty(exports, "__esModule", {
 exports.showF = showF;
 exports.showC = showC;
 
-var _getWeather = require("../getWeather.js");
+var _index = require("../index");
 
 function showF(temp, name) {
   var rounded = Math.round(temp * 10) / 10;
-  _getWeather.displayTemp.textContent = "".concat(rounded, "F");
-  _getWeather.cityName.textContent = name;
+  _index.displayTemp.textContent = "".concat(rounded, "F");
+  _index.cityName.textContent = name;
 }
 
 function showC(temp, name) {
   var rounded = Math.round(temp * 10) / 10;
-  _getWeather.displayTemp.textContent = "".concat(rounded, "C");
-  _getWeather.cityName.textContent = name;
+  _index.displayTemp.textContent = "".concat(rounded, "C");
+  _index.cityName.textContent = name;
 }

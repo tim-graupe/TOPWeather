@@ -1,4 +1,4 @@
-import { displayTemp, submitBtn, city, cityName } from "../getWeather.js";
+import { displayTemp, submitBtn, city, cityName } from "../index";
 
 function showF(temp, name) {
   const rounded = Math.round(temp * 10) / 10;
