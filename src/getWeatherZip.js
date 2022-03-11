@@ -17,8 +17,14 @@ export async function getWeatherZip(unit) {
     showF(weatherData.main.temp, weatherData.name);
   } else {
     showC(weatherData.main.temp, weatherData.name);
-
   }
-  currentConditions(weatherData.main.feels_like, weatherData.main.humidity, weatherData.sys.sunrise, weatherData.sys.sunset, weatherData.weather[0].description, weatherData.wind.speed, `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`);
-
+  currentConditions(
+    weatherData.main.feels_like,
+    weatherData.main.humidity,
+    weatherData.sys.sunrise,
+    weatherData.sys.sunset,
+    weatherData.weather[0].description,
+    weatherData.wind.speed,
+    `http://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`
+  );
 }

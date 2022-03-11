@@ -15,12 +15,12 @@ function currentConditions(feel, humidity, sunrise, sunset, description, speed, 
   humidityDiv.textContent = "humidity: ".concat(humidity, "%");
   conditions.appendChild(humidityDiv);
   var srDiv = document.createElement("div");
-  var time = new Date(sunrise * 1000);
-  srDiv.textContent = "sunrise:" + time.getHours() + ":" + time.getMinutes();
+  var time = new Date(sunrise * 1000).toTimeString().substring(0, 5);
+  srDiv.textContent = "Sunrise: ".concat(time);
   conditions.appendChild(srDiv);
   var ssDiv = document.createElement("div");
-  var ssTime = new Date(sunset * 1000);
-  ssDiv.textContent = "sunset:" + ssTime.getHours() + ":" + ssTime.getMinutes();
+  var ssTime = new Date(sunset * 1000).toTimeString().substring(0, 5);
+  ssDiv.textContent = "Sunset: ".concat(ssTime);
   conditions.appendChild(ssDiv);
   var desc = document.createElement("div");
   desc.textContent = description;

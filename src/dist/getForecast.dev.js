@@ -59,19 +59,10 @@ function getForecast(unit) {
         return el.weather[0].description;
       });
       var sunrise = days.map(function (el) {
-        var time = new Date(el.sunrise * 1000);
-        var hour = time.getHours();
-        var minute = time.getMinutes();
-        var newTime = "Sunrise:  ".concat(hour, ":").concat(minute);
-        return newTime;
+        return new Date(el.sunrise * 1000).toTimeString().substring(0, 5);
       });
       var sunset = days.map(function (el) {
-        console.log(el);
-        var time = new Date(el.sunset * 1000);
-        var hour = time.getHours();
-        var minute = time.getMinutes();
-        var newTime = "Sunset:  ".concat(hour, ":").concat(minute);
-        return newTime;
+        return new Date(el.sunset * 1000).toTimeString().substring(0, 5);
       });
       var humidityPercentage = days.map(function (el) {
         return el.humidity;

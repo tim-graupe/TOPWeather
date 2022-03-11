@@ -32,7 +32,7 @@ export function getForecastHourly(unit) {
           });
 
           const forecastHours = hours.map((el) => {
-            return new Date(el.dt * 1000).toTimeString().substring(0,5);
+            return new Date(el.dt * 1000).toTimeString().substring(0, 5);
           });
 
           const forecastIcons = hours.map((el) => {

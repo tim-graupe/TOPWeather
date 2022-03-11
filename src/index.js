@@ -2,7 +2,6 @@ import { getWeather } from "./getWeather.js";
 import { getForecast } from "./getForecast.js";
 import { getForecastHourly } from "./getForecastHourly.js";
 
-
 const submitBtn = document.getElementById("submit-btn");
 const city = document.getElementById("city-input");
 const cBtn = document.getElementById("change-to-C");
@@ -10,6 +9,7 @@ const fBtn = document.getElementById("change-to-F");
 const displayTemp = document.getElementById("display-temp");
 const cityName = document.getElementById("display-city-name");
 const hourly = document.getElementById("display-hourly");
+
 
 
 cBtn.addEventListener("click", () => {
@@ -22,7 +22,7 @@ fBtn.addEventListener("click", () => {
   getWeather("imperial");
   getForecast("imperial");
   getForecastHourly("imperial");
-  console.log('hi')
+  console.log("hi");
 });
 
 submitBtn.addEventListener("click", () => {
@@ -40,4 +40,4 @@ city.addEventListener("keypress", (e) => {
 });
 
 //TODO: add weather icons for current weather, mobile friendly
-export {submitBtn,city,cBtn,fBtn,displayTemp,cityName,hourly}
+export { submitBtn, city, cBtn, fBtn, displayTemp, cityName, hourly };

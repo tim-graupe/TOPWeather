@@ -18,13 +18,13 @@ export function currentConditions(
   conditions.appendChild(humidityDiv);
 
   const srDiv = document.createElement("div");
-  const time = new Date(sunrise * 1000);
-  srDiv.textContent = "sunrise:"  + time.getHours() + ":" + time.getMinutes();
+  const time = new Date(sunrise * 1000).toTimeString().substring(0, 5);
+  srDiv.textContent = `Sunrise: ${time}`;
   conditions.appendChild(srDiv);
 
   const ssDiv = document.createElement("div");
-  const ssTime = new Date(sunset * 1000);
-  ssDiv.textContent = "sunset:" + ssTime.getHours() + ":" + ssTime.getMinutes();
+  const ssTime = new Date(sunset * 1000).toTimeString().substring(0, 5);
+  ssDiv.textContent = `Sunset: ${ssTime}`;
   conditions.appendChild(ssDiv);
 
   const desc = document.createElement("div");
@@ -32,7 +32,7 @@ export function currentConditions(
   conditions.appendChild(desc);
 
   const speedDiv = document.createElement("div");
-  speedDiv.textContent =`wind speed: ${speed}`;
+  speedDiv.textContent = `wind speed: ${speed}`;
   conditions.appendChild(speedDiv);
 
   const iconImg = document.createElement("img");
