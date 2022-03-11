@@ -39,11 +39,11 @@ export function showHighLow(
   forecastCardBack.appendChild(desc);
 
   const sr = document.createElement("div");
-  sr.textContent = sunrise;
+  sr.textContent = `Sunrise: ${sunrise}`;
   forecastCardBack.appendChild(sr);
 
   const ss = document.createElement("div");
-  ss.textContent = sunset;
+  ss.textContent = `Sunset: ${sunset}`;
   forecastCardBack.appendChild(ss);
 
   const humid = document.createElement("div");

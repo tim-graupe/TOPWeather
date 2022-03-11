@@ -32,10 +32,10 @@ function showHighLow(high, low, dayName, icon, description, sunrise, sunset, hum
   desc.textContent = description;
   forecastCardBack.appendChild(desc);
   var sr = document.createElement("div");
-  sr.textContent = sunrise;
+  sr.textContent = "Sunrise: ".concat(sunrise);
   forecastCardBack.appendChild(sr);
   var ss = document.createElement("div");
-  ss.textContent = sunset;
+  ss.textContent = "Sunset: ".concat(sunset);
   forecastCardBack.appendChild(ss);
   var humid = document.createElement("div");
   humid.textContent = "Humidity: ".concat(humidity, "%");
