@@ -1,6 +1,6 @@
 import { showC, showF } from "./DOMfuncs/displaytemps.js";
 import { currentConditions } from "./DOMfuncs/displayCurrentConditions.js";
-import { displayTemp, submitBtn, city, cityName } from "./index.js";
+import { city } from "./index.js";
 export async function getWeatherName(unit) {
   const response = await fetch(
     `http://api.openweathermap.org/data/2.5/weather?q=${city.value}&units=${unit}&appid=f4c2e88d89f530a5c961cffa302dc0b9`,

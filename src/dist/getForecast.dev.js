@@ -55,9 +55,35 @@ function getForecast(unit) {
       var forecastIcons = days.map(function (el) {
         return "http://openweathermap.org/img/wn/".concat(el.weather[0].icon, "@2x.png");
       });
+      var description = days.map(function (el) {
+        return el.weather[0].description;
+      });
+      var sunrise = days.map(function (el) {
+        var time = new Date(el.sunrise * 1000);
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var newTime = "Sunrise:  ".concat(hour, ":").concat(minute);
+        return newTime;
+      });
+      var sunset = days.map(function (el) {
+        console.log(el);
+        var time = new Date(el.sunset * 1000);
+        var hour = time.getHours();
+        var minute = time.getMinutes();
+        var newTime = "Sunset:  ".concat(hour, ":").concat(minute);
+        return newTime;
+      });
+      var humidityPercentage = days.map(function (el) {
+        return el.humidity;
+      });
+      var rain = days.map(function (el) {
+        var percentage = el.pop * 100;
+        return percentage;
+      }); // response.daily.humidty;
+      // reponse.daily.pop;
 
       for (var _i = 0; _i < highTemps.length; _i++) {
-        (0, _displayHighLow.showHighLow)(highTemps[_i], lowTemps[_i], forecastDays[_i], forecastIcons[_i]);
+        (0, _displayHighLow.showHighLow)(highTemps[_i], lowTemps[_i], forecastDays[_i], forecastIcons[_i], description[_i], sunrise[_i], sunset[_i], humidityPercentage[_i], rain[_i]);
       }
     });
   });

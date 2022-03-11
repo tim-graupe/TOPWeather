@@ -11,10 +11,6 @@ var _getForecast = require("./getForecast.js");
 
 var _getForecastHourly = require("./getForecastHourly.js");
 
-var _getWeatherZip = require("./getWeatherZip.js");
-
-var _getWeatherName = require("./getWeatherName.js");
-
 var submitBtn = document.getElementById("submit-btn");
 exports.submitBtn = submitBtn;
 var city = document.getElementById("city-input");

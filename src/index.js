@@ -1,8 +1,7 @@
 import { getWeather } from "./getWeather.js";
-import { forecast, getForecast } from "./getForecast.js";
+import { getForecast } from "./getForecast.js";
 import { getForecastHourly } from "./getForecastHourly.js";
-import { getWeatherZip } from "./getWeatherZip.js";
-import { getWeatherName } from "./getWeatherName.js";
+
 
 const submitBtn = document.getElementById("submit-btn");
 const city = document.getElementById("city-input");

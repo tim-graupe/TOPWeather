@@ -1,8 +1,6 @@
 import { renderHourly } from "./DOMfuncs/displayHourly.js";
 import { city } from "./index.js";
 
-const hourly = document.getElementById("display-hourly");
-
 export function getForecastHourly(unit) {
   fetch(
     `http://api.openweathermap.org/data/2.5/forecast?q=${city.value},us&units=${unit}&appid=f4c2e88d89f530a5c961cffa302dc0b9`,
@@ -34,11 +32,7 @@ export function getForecastHourly(unit) {
           });
 
           const forecastHours = hours.map((el) => {
-            let time = new Date(el.dt * 1000);
-            let hour = time.getHours();
-            let minute = time.getMinutes();
-            let newTime = `${hour}:${minute}${minute}`;
-            return newTime;
+            return new Date(el.dt * 1000).toTimeString().substring(0,5);
           });
 
           const forecastIcons = hours.map((el) => {

@@ -1,7 +1,7 @@
 import { getWeatherZip } from "./getWeatherZip.js";
 import { getWeatherName } from "./getWeatherName.js";
 import {  forecast } from "./getForecast.js";
-import {city, cityName, hourly} from './index.js'
+import {city, hourly} from './index.js'
 
 
 async function getWeather(unit) {

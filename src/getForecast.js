@@ -18,6 +18,7 @@ export function getForecast(unit) {
         { mode: "cors" }
       )
         .then(function (response) {
+
           return response.json();
         })
 
@@ -49,16 +50,60 @@ export function getForecast(unit) {
             return newDay;
           });
 
+
           const forecastIcons = days.map((el) => {
             return `http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`;
           });
+
+          const description = days.map((el) => {
+            return el.weather[0].description
+          })
+
+          const sunrise = days.map((el) => {
+            let time = new Date(el.sunrise * 1000);
+            let hour = time.getHours();
+            let minute = time.getMinutes();
+            let newTime = `Sunrise:  ${hour}:${minute}`;
+            return newTime;
+          });
+
+          const sunset = days.map((el) => {
+            console.log(el)
+            let time = new Date(el.sunset * 1000);
+            let hour = time.getHours();
+            let minute = time.getMinutes();
+            let newTime = `Sunset:  ${hour}:${minute}`;
+            return newTime;
+          });
+
+          const humidityPercentage = days.map((el) => {
+            return el.humidity
+          })
+
+          const rain = days.map((el) => {
+            let percentage = el.pop * 100
+            return percentage
+          })
+
+
+
+
+
+
+        // response.daily.humidty;
+        // reponse.daily.pop;
 
           for (let i = 0; i < highTemps.length; i++) {
             showHighLow(
               highTemps[i],
               lowTemps[i],
               forecastDays[i],
-              forecastIcons[i]
+              forecastIcons[i],
+              description[i],
+              sunrise[i],
+              sunset[i],
+              humidityPercentage[i],
+              rain[i]
             );
           }
         });

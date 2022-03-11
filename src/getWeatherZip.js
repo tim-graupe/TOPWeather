@@ -1,6 +1,6 @@
 import { currentConditions } from "./DOMfuncs/displayCurrentConditions.js";
 import { showC, showF } from "./DOMfuncs/displaytemps.js";
-import { displayTemp, submitBtn, city, cityName } from "./index.js";
+import { city } from "./index.js";
 
 export async function getWeatherZip(unit) {
   const response = await fetch(
